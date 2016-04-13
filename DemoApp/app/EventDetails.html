@@ -23,7 +23,9 @@
             </div>
         </div>
 
-        <buttun class= "btn" ng-disabled ="buttonDisabled">Disabled</buttun>
+        <buttun type="button" class= "btn btn-primary" ng-click ="scrollToSession()">Scroll</buttun>
+
+
 
         <div > {{21*6}}</div>
         <div ng-non-bindable> {{21*6}}</div>
@@ -57,7 +59,7 @@
             <option selected value ="-upVoteCount">Votes</option>
         </select>
         <ul class="thumnails">
-            <li ng-repeat="session in event.sessions | orderBy:sortorder ">
+            <li ng-repeat="session in event.sessions | orderBy:sortorder " class="span11" id ="session{{session.id}}">
 
                 <div class = "row session">
                     <div class ="span0 well votingWidget">
@@ -85,13 +87,17 @@
         </ul>
     </div>
 </div>
-<script src="/lib/jquery.min.js"></script>
-<script src="/lib/underscore-1.4.4.min.js"></script>
-<script src="/lib/bootstrap.min.js"></script>
-<script src="/lib/angular/angular.js"></script>
-<script src="/lib/angular/angular-sanitize.js"></script>
-<script src="/js/app.js"></script>
-<script src="/js/controllers/EventController.js"></script>
-<script src="/js/filters.js"></script>
+
+<script src="lib/jquery.min.js"></script>
+<script src="lib/underscore-1.4.4.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular/angular-sanitize.js"></script>
+<script src="lib/angular/angular-resource.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/EventController.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/services/EventData.js"></script>
+
 </body>
 </html>
